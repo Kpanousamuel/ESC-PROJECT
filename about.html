@@ -140,6 +140,8 @@
             min-height: 100vh;
             padding: 20px;
             animation: fadeInDown 0.8s ease;
+            overflow-x: hidden;
+            width: 100%;
         }
         
         nav {
@@ -157,6 +159,8 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 20px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
         
         nav a {
@@ -268,91 +272,214 @@
         /* RESPONSIVE DESIGN - MEDIA QUERIES */
         /* ============================================ */
 
-        @media (max-width: 480px) {
+        /* Ultra Small Devices - Very Small Phones (< 320px) */
+        @media (max-width: 320px) {
             body {
-                padding: 10px;
+                padding: 5px;
+            }
+
+            nav {
+                margin-bottom: 15px;
+                padding: 8px 0;
+                border-radius: 8px;
+            }
+
+            nav ul {
+                gap: 5px;
+                flex-direction: column;
+                align-items: center;
+                padding: 0 8px;
+            }
+
+            nav a {
+                padding: 6px 8px;
+                font-size: 0.7em;
+                border-radius: 4px;
+            }
+
+            .container {
+                padding: 12px;
+                border-radius: 10px;
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 1.3em;
+                margin-bottom: 20px;
+                word-break: break-word;
+            }
+
+            .bio-card {
+                padding: 12px;
+                margin-bottom: 12px;
+                border-radius: 8px;
+            }
+
+            .bio-card h2 {
+                font-size: 1.1em;
+                margin-bottom: 6px;
+            }
+
+            .matric-dept {
+                font-size: 0.75em;
+                margin-bottom: 10px;
+            }
+
+            .bio-card p {
+                font-size: 0.8em;
+                line-height: 1.3;
+            }
+        }
+
+        /* Extra Small Devices - Mobile (320px - 480px) */
+        @media (min-width: 320px) and (max-width: 480px) {
+            body {
+                padding: 8px;
+                overflow-x: hidden;
             }
 
             nav {
                 margin-bottom: 15px;
                 padding: 10px 0;
+                border-radius: 8px;
             }
 
             nav ul {
-                gap: 10px;
+                gap: 8px;
                 flex-direction: column;
                 align-items: center;
+                padding: 0 10px;
             }
 
             nav a {
                 padding: 8px 12px;
-                font-size: 0.8em;
+                font-size: 0.75em;
+                border-radius: 4px;
+                display: block;
+                width: 100%;
+                text-align: center;
             }
 
             .container {
-                padding: 20px;
+                padding: 15px;
+                border-radius: 10px;
                 max-width: 100%;
+                box-shadow: 0 4px 16px rgba(31, 38, 135, 0.25);
             }
 
             h1 {
                 font-size: 1.5em;
                 margin-bottom: 25px;
+                word-break: break-word;
+                font-weight: 600;
             }
 
             .bio-card {
                 padding: 15px;
                 margin-bottom: 15px;
+                border-radius: 8px;
             }
 
             .bio-card h2 {
-                font-size: 1.3em;
+                font-size: 1.2em;
                 margin-bottom: 8px;
             }
 
             .matric-dept {
                 font-size: 0.8em;
+                margin-bottom: 12px;
             }
 
             .bio-card p {
-                font-size: 0.9em;
+                font-size: 0.85em;
                 line-height: 1.4;
             }
         }
 
-        @media (max-width: 640px) {
+        /* Small Devices - Small Tablets (481px - 640px) */
+        @media (min-width: 481px) and (max-width: 640px) {
+            body {
+                padding: 10px;
+            }
+
+            nav {
+                margin-bottom: 20px;
+                padding: 10px 0;
+            }
+
             nav ul {
-                gap: 12px;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                padding: 9px 14px;
+                font-size: 0.8em;
+                border-radius: 5px;
             }
 
             .container {
-                padding: 25px;
+                padding: 20px;
+                max-width: 100%;
+                border-radius: 12px;
             }
 
             h1 {
                 font-size: 1.8em;
+                margin-bottom: 28px;
             }
 
             .bio-card {
                 padding: 18px;
+                margin-bottom: 18px;
+                border-radius: 8px;
             }
 
             .bio-card h2 {
-                font-size: 1.4em;
+                font-size: 1.35em;
+                margin-bottom: 9px;
+            }
+
+            .matric-dept {
+                font-size: 0.85em;
+                margin-bottom: 13px;
+            }
+
+            .bio-card p {
+                font-size: 0.88em;
+                line-height: 1.5;
             }
         }
 
-        @media (max-width: 768px) {
+        /* Medium Devices - Tablets (641px - 768px) */
+        @media (min-width: 641px) and (max-width: 768px) {
             body {
-                padding: 15px;
+                padding: 12px;
+            }
+
+            nav {
+                margin-bottom: 25px;
+                padding: 12px 0;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            nav a {
+                padding: 10px 16px;
+                font-size: 0.88em;
             }
 
             .container {
-                padding: 30px;
+                padding: 28px;
+                max-width: 95%;
+                border-radius: 12px;
             }
 
             h1 {
                 font-size: 2em;
-                margin-bottom: 30px;
+                margin-bottom: 32px;
             }
 
             .bio-card {
@@ -362,6 +489,61 @@
 
             .bio-card h2 {
                 font-size: 1.5em;
+                margin-bottom: 10px;
+            }
+
+            .matric-dept {
+                font-size: 0.9em;
+                margin-bottom: 14px;
+            }
+
+            .bio-card p {
+                font-size: 0.92em;
+                line-height: 1.6;
+            }
+        }
+
+        /* Medium-Large Devices - Small Tablets (769px - 900px) */
+        @media (min-width: 769px) and (max-width: 900px) {
+            body {
+                padding: 15px;
+            }
+
+            nav {
+                margin-bottom: 28px;
+                padding: 13px 0;
+            }
+
+            nav ul {
+                gap: 18px;
+            }
+
+            nav a {
+                padding: 10px 18px;
+                font-size: 0.9em;
+            }
+
+            .container {
+                padding: 32px;
+                max-width: 95%;
+            }
+
+            h1 {
+                font-size: 2.2em;
+                margin-bottom: 35px;
+            }
+
+            .bio-card {
+                padding: 22px;
+                margin-bottom: 22px;
+            }
+
+            .bio-card h2 {
+                font-size: 1.6em;
+            }
+
+            .matric-dept {
+                font-size: 0.95em;
             }
 
             .bio-card p {
@@ -369,22 +551,203 @@
             }
         }
 
-        @media (max-width: 1024px) {
+        /* Large Tablets (901px - 1024px) */
+        @media (min-width: 901px) and (max-width: 1024px) {
+            body {
+                padding: 18px;
+            }
+
+            nav {
+                margin-bottom: 30px;
+                padding: 14px 0;
+            }
+
+            nav ul {
+                gap: 20px;
+            }
+
+            nav a {
+                padding: 11px 20px;
+                font-size: 0.93em;
+            }
+
             .container {
-                max-width: 95%;
+                padding: 36px;
+                max-width: 98%;
+            }
+
+            h1 {
+                font-size: 2.3em;
+                margin-bottom: 36px;
+            }
+
+            .bio-card {
+                padding: 24px;
+                margin-bottom: 24px;
+            }
+
+            .bio-card h2 {
+                font-size: 1.65em;
+            }
+
+            .matric-dept {
+                font-size: 0.97em;
+            }
+
+            .bio-card p {
+                font-size: 0.97em;
             }
         }
 
+        /* Desktop Screens (1025px - 1440px) */
+        @media (min-width: 1025px) and (max-width: 1440px) {
+            body {
+                padding: 20px;
+            }
+
+            nav {
+                margin-bottom: 32px;
+            }
+
+            nav ul {
+                gap: 22px;
+            }
+
+            .container {
+                max-width: 1000px;
+                padding: 40px;
+            }
+
+            h1 {
+                font-size: 2.4em;
+            }
+
+            .bio-card {
+                padding: 26px;
+            }
+
+            .bio-card h2 {
+                font-size: 1.7em;
+            }
+        }
+
+        /* Large Desktop (> 1441px) */
+        @media (min-width: 1441px) {
+            body {
+                padding: 25px;
+            }
+
+            .container {
+                max-width: 1100px;
+                padding: 45px;
+            }
+
+            h1 {
+                font-size: 2.6em;
+            }
+
+            .bio-card {
+                padding: 30px;
+                margin-bottom: 28px;
+            }
+
+            .bio-card h2 {
+                font-size: 1.85em;
+            }
+        }
+
+        /* Landscape Mode - Small Height */
+        @media (orientation: landscape) and (max-height: 500px) {
+            body {
+                padding: 8px;
+            }
+
+            nav {
+                margin-bottom: 10px;
+                padding: 8px 0;
+            }
+
+            nav ul {
+                gap: 8px;
+            }
+
+            nav a {
+                padding: 6px 10px;
+                font-size: 0.75em;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.4em;
+                margin-bottom: 10px;
+            }
+
+            .bio-card {
+                padding: 12px;
+                margin-bottom: 12px;
+            }
+
+            .bio-card h2 {
+                font-size: 1.1em;
+                margin-bottom: 5px;
+            }
+
+            .matric-dept {
+                font-size: 0.75em;
+            }
+
+            .bio-card p {
+                font-size: 0.8em;
+            }
+        }
+
+        /* Landscape Mode - Medium Height */
+        @media (orientation: landscape) and (min-height: 501px) {
+            body {
+                padding: 12px;
+            }
+
+            nav {
+                margin-bottom: 15px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Touch Devices */
         @media (hover: none) and (pointer: coarse) {
             .bio-card:hover {
-                transform: translateY(-3px);
+                transform: translateY(-5px);
+            }
+
+            nav a:hover {
+                transform: scale(1.02);
             }
         }
 
+        /* Accessibility - Reduced Motion */
         @media (prefers-reduced-motion: reduce) {
             * {
                 animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* High DPI Screens */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            body {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
             }
         }
     </style>
