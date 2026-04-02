@@ -18,6 +18,8 @@
         min-height: 100vh;
         padding: 0;
         scroll-behavior: smooth;
+        overflow-x: hidden;
+        width: 100%;
       }
 
       nav {
@@ -40,6 +42,8 @@
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 20px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
       }
 
       nav a {
@@ -82,6 +86,9 @@
         border-radius: 20px;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
         animation: scaleIn 0.8s ease;
+        width: auto;
+        overflow: hidden;
+        word-wrap: break-word;
       }
 
       .hero h1 {
@@ -265,6 +272,8 @@
         max-width: 1200px;
         margin: 0 auto;
         padding: 60px 20px;
+        width: 100%;
+        overflow: hidden;
       }
 
       /* Section Titles */
@@ -307,6 +316,8 @@
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
         backdrop-filter: blur(10px);
         animation: scaleIn 0.8s ease;
+        word-break: break-word;
+        max-width: 100%;
       }
 
       th {
@@ -325,6 +336,8 @@
         padding: 18px 20px;
         border-bottom: 1px solid #e0e0e0;
         transition: all 0.3s ease;
+        word-wrap: break-word;
+        word-break: break-word;
       }
 
       tr {
@@ -361,6 +374,8 @@
         gap: 30px;
         margin-top: 50px;
         animation: fadeIn 1s ease;
+        width: 100%;
+        overflow: hidden;
       }
 
       .photo-card {
@@ -468,6 +483,8 @@
         border: 1px solid rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(10px);
         animation: scaleIn 0.8s ease, float 4s ease-in-out infinite;
+        width: 100%;
+        overflow: hidden;
       }
 
       .stat-box {
@@ -520,58 +537,269 @@
       /* RESPONSIVE DESIGN - MEDIA QUERIES */
       /* ============================================ */
 
-      /* Extra Small Devices - Mobile (< 480px) */
-      @media (max-width: 480px) {
+      /* Ultra Small Devices - Very Small Phones (< 320px) */
+      @media (max-width: 320px) {
+        body {
+          padding: 5px;
+        }
+
         nav ul {
-          gap: 10px;
+          gap: 5px;
+          padding: 0 10px;
         }
 
         nav a {
-          padding: 8px 12px;
-          font-size: 0.8em;
+          padding: 6px 8px;
+          font-size: 0.7em;
         }
 
         .hero {
-          padding: 40px 15px 30px;
-          margin: 10px;
+          padding: 30px 10px 20px;
+          margin: 5px;
+          border-radius: 10px;
         }
 
         .hero h1 {
-          font-size: 1.8em;
-          margin-bottom: 10px;
+          font-size: 1.4em;
+          margin-bottom: 8px;
         }
 
         .hero p {
-          font-size: 0.95em;
-          margin-bottom: 15px;
+          font-size: 0.85em;
+          margin-bottom: 10px;
         }
 
         .container {
-          padding: 30px 10px;
+          padding: 15px 10px;
+          border-radius: 10px;
         }
 
         .section-title {
-          font-size: 1.5em;
-          margin-bottom: 25px;
+          font-size: 1.3em;
+          margin-bottom: 20px;
         }
 
         table {
-          font-size: 0.75em;
+          font-size: 0.65em;
         }
 
         th {
-          padding: 10px 8px;
-          font-size: 0.8em;
+          padding: 8px 5px;
+          font-size: 0.7em;
         }
 
         td {
-          padding: 10px 8px;
+          padding: 8px 5px;
         }
 
         .photos-grid {
           grid-template-columns: 1fr;
+          gap: 10px;
+          margin-top: 15px;
+        }
+
+        .photo-card {
+          padding: 15px;
+          border-radius: 10px;
+        }
+
+        .photo-placeholder {
+          width: 80px;
+          height: 80px;
+          font-size: 2em;
+        }
+
+        .photo-card h3 {
+          font-size: 0.95em;
+        }
+
+        .photo-card p {
+          font-size: 0.75em;
+        }
+
+        .stats-section {
+          grid-template-columns: 1fr;
+          gap: 8px;
+          padding: 15px;
+          margin: 20px 0;
+        }
+
+        .stat-box {
+          padding: 12px;
+        }
+
+        .stat-number {
+          font-size: 1.5em;
+        }
+
+        .stat-label {
+          font-size: 0.75em;
+        }
+      }
+
+      /* Extra Small Devices - Mobile (320px - 480px) */
+      @media (min-width: 320px) and (max-width: 480px) {
+        body {
+          padding: 8px;
+        }
+
+        nav ul {
+          gap: 8px;
+          padding: 0 15px;
+        }
+
+        nav a {
+          padding: 8px 10px;
+          font-size: 0.75em;
+          border-radius: 5px;
+        }
+
+        .hero {
+          padding: 35px 12px 25px;
+          margin: 8px;
+          border-radius: 12px;
+        }
+
+        .hero h1 {
+          font-size: 1.6em;
+          margin-bottom: 10px;
+          word-break: break-word;
+        }
+
+        .hero p {
+          font-size: 0.9em;
+          margin-bottom: 15px;
+        }
+
+        .container {
+          padding: 20px 12px;
+          border-radius: 12px;
+        }
+
+        .section-title {
+          font-size: 1.4em;
+          margin-bottom: 20px;
+        }
+
+        table {
+          font-size: 0.7em;
+          border-radius: 8px;
+        }
+
+        th {
+          padding: 9px 6px;
+          font-size: 0.75em;
+        }
+
+        td {
+          padding: 9px 6px;
+        }
+
+        .photos-grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+          margin-top: 20px;
+        }
+
+        .photo-card {
+          padding: 18px;
+          border-radius: 12px;
+        }
+
+        .photo-placeholder {
+          width: 90px;
+          height: 90px;
+          font-size: 2.2em;
+        }
+
+        .photo-card h3 {
+          font-size: 1em;
+        }
+
+        .photo-card p {
+          font-size: 0.8em;
+        }
+
+        .matric-badge {
+          padding: 6px 12px;
+          font-size: 0.7em;
+        }
+
+        .stats-section {
+          grid-template-columns: 1fr;
+          gap: 10px;
+          padding: 18px;
+          margin: 25px 0;
+          border-radius: 10px;
+        }
+
+        .stat-box {
+          padding: 14px;
+          border-radius: 8px;
+        }
+
+        .stat-number {
+          font-size: 1.8em;
+        }
+
+        .stat-label {
+          font-size: 0.8em;
+        }
+      }
+
+      /* Small Devices - Small Tablets (481px - 640px) */
+      @media (min-width: 481px) and (max-width: 640px) {
+        nav ul {
+          gap: 12px;
+        }
+
+        nav a {
+          padding: 9px 14px;
+          font-size: 0.8em;
+          border-radius: 5px;
+        }
+
+        .hero {
+          padding: 45px 15px 30px;
+          margin: 12px;
+        }
+
+        .hero h1 {
+          font-size: 2em;
+        }
+
+        .hero p {
+          font-size: 0.95em;
+        }
+
+        .container {
+          padding: 35px 15px;
+        }
+
+        .section-title {
+          font-size: 1.6em;
+          margin-bottom: 25px;
+        }
+
+        table {
+          font-size: 0.78em;
+          display: block;
+          overflow-x: auto;
+          border-radius: 10px;
+        }
+
+        th {
+          padding: 11px;
+          font-size: 0.82em;
+        }
+
+        td {
+          padding: 11px;
+        }
+
+        .photos-grid {
+          grid-template-columns: repeat(2, 1fr);
           gap: 15px;
-          margin-top: 25px;
         }
 
         .photo-card {
@@ -584,146 +812,130 @@
           font-size: 2.5em;
         }
 
-        .photo-card h3 {
-          font-size: 1.1em;
-        }
-
-        .photo-card p {
-          font-size: 0.85em;
-        }
-
-        .matric-badge {
-          padding: 6px 12px;
-          font-size: 0.75em;
-        }
-
         .stats-section {
-          grid-template-columns: 1fr;
-          gap: 10px;
-          padding: 20px;
-          margin: 30px 0;
-        }
-
-        .stat-box {
-          padding: 15px;
-        }
-
-        .stat-number {
-          font-size: 1.8em;
-        }
-
-        .stat-label {
-          font-size: 0.85em;
-        }
-      }
-
-      /* Small Devices - Small Tablets (481px - 640px) */
-      @media (max-width: 640px) {
-        nav ul {
+          grid-template-columns: repeat(2, 1fr);
+          padding: 22px;
           gap: 12px;
         }
 
-        nav a {
-          padding: 10px 15px;
-          font-size: 0.85em;
-        }
-
-        .hero {
-          padding: 50px 15px 35px;
-          margin: 15px;
-        }
-
-        .hero h1 {
-          font-size: 2.2em;
-        }
-
-        .hero p {
-          font-size: 1em;
-        }
-
-        .container {
-          padding: 40px 15px;
-        }
-
-        .section-title {
-          font-size: 1.8em;
-          margin-bottom: 30px;
-        }
-
-        table {
-          font-size: 0.8em;
-          display: block;
-          overflow-x: auto;
-        }
-
-        th {
-          padding: 12px;
-          font-size: 0.85em;
-        }
-
-        td {
-          padding: 12px;
-        }
-
-        .photos-grid {
-          grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-          gap: 15px;
-        }
-
-        .photo-placeholder {
-          width: 110px;
-          height: 110px;
-          font-size: 2.8em;
-        }
-
-        .stats-section {
-          grid-template-columns: repeat(2, 1fr);
-          padding: 25px;
-        }
-
         .stat-number {
-          font-size: 2em;
+          font-size: 1.9em;
         }
       }
 
       /* Medium Devices - Tablets (641px - 768px) */
-      @media (max-width: 768px) {
+      @media (min-width: 641px) and (max-width: 768px) {
         nav ul {
           gap: 15px;
         }
 
         nav a {
-          padding: 10px 18px;
-          font-size: 0.9em;
+          padding: 10px 16px;
+          font-size: 0.88em;
         }
 
         .hero {
-          padding: 60px 20px 40px;
+          padding: 55px 18px 38px;
           margin: 15px;
         }
 
         .hero h1 {
-          font-size: 2.5em;
+          font-size: 2.3em;
         }
 
         .hero p {
-          font-size: 1.1em;
+          font-size: 1.05em;
         }
 
         .container {
-          padding: 45px 20px;
+          padding: 40px 18px;
         }
 
         .section-title {
-          font-size: 2em;
+          font-size: 1.9em;
+          margin-bottom: 32px;
+        }
+
+        table {
+          font-size: 0.83em;
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+
+        th {
+          padding: 14px;
+        }
+
+        td {
+          padding: 13px;
+        }
+
+        .photos-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 18px;
+        }
+
+        .photo-card {
+          padding: 23px;
+        }
+
+        .photo-placeholder {
+          width: 115px;
+          height: 115px;
+          font-size: 2.8em;
+        }
+
+        .photo-card h3 {
+          font-size: 1.12em;
+        }
+
+        .stats-section {
+          grid-template-columns: repeat(2, 1fr);
+          padding: 28px;
+          gap: 15px;
+        }
+
+        .stat-number {
+          font-size: 2.1em;
+        }
+      }
+
+      /* Medium-Large Devices - Small Tablets (769px - 900px) */
+      @media (min-width: 769px) and (max-width: 900px) {
+        nav ul {
+          gap: 18px;
+        }
+
+        nav a {
+          padding: 10px 18px;
+          font-size: 0.92em;
+        }
+
+        .hero {
+          padding: 65px 20px 45px;
+          margin: 15px;
+        }
+
+        .hero h1 {
+          font-size: 2.6em;
+        }
+
+        .hero p {
+          font-size: 1.12em;
+        }
+
+        .container {
+          padding: 45px 22px;
+        }
+
+        .section-title {
+          font-size: 2.1em;
           margin-bottom: 35px;
         }
 
         table {
-          font-size: 0.85em;
-          display: block;
-          overflow-x: auto;
-          white-space: nowrap;
+          font-size: 0.88em;
         }
 
         th {
@@ -735,27 +947,23 @@
         }
 
         .photos-grid {
-          grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+          grid-template-columns: repeat(3, 1fr);
           gap: 20px;
         }
 
         .photo-card {
-          padding: 25px;
+          padding: 24px;
         }
 
         .photo-placeholder {
-          width: 120px;
-          height: 120px;
+          width: 125px;
+          height: 125px;
           font-size: 3em;
         }
 
-        .photo-card h3 {
-          font-size: 1.15em;
-        }
-
         .stats-section {
-          grid-template-columns: repeat(2, 1fr);
-          padding: 30px;
+          grid-template-columns: repeat(3, 1fr);
+          padding: 32px;
         }
 
         .stat-number {
@@ -763,41 +971,41 @@
         }
       }
 
-      /* Large Tablets (769px - 1024px) */
-      @media (max-width: 1024px) {
+      /* Large Tablets (901px - 1024px) */
+      @media (min-width: 901px) and (max-width: 1024px) {
         nav ul {
           gap: 20px;
         }
 
         nav a {
-          padding: 11px 20px;
-          font-size: 0.95em;
+          padding: 11px 19px;
+          font-size: 0.94em;
         }
 
         .hero {
-          padding: 70px 20px 50px;
+          padding: 68px 20px 48px;
         }
 
         .hero h1 {
-          font-size: 3em;
+          font-size: 2.8em;
         }
 
         .hero p {
-          font-size: 1.2em;
+          font-size: 1.15em;
         }
 
         .container {
-          padding: 50px 30px;
+          padding: 48px 25px;
         }
 
         .section-title {
-          font-size: 2.2em;
-          margin-bottom: 40px;
+          font-size: 2.15em;
+          margin-bottom: 38px;
         }
 
         .photos-grid {
-          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-          gap: 25px;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 22px;
         }
 
         .photo-card:hover {
@@ -811,13 +1019,17 @@
       }
 
       /* Desktop Screens (1025px - 1440px) */
-      @media (max-width: 1440px) {
+      @media (min-width: 1025px) and (max-width: 1440px) {
         nav ul {
           gap: 25px;
         }
 
         .container {
           max-width: 1000px;
+        }
+
+        .photos-grid {
+          grid-template-columns: repeat(4, 1fr);
         }
       }
 
@@ -836,24 +1048,55 @@
         }
       }
 
-      /* Orientation Query - Landscape Mode */
-      @media (orientation: landscape) and (max-height: 600px) {
+      /* Orientation Query - Landscape Mode (Small Height) */
+      @media (orientation: landscape) and (max-height: 500px) {
         .hero {
-          padding: 40px 20px 20px;
+          padding: 30px 20px 15px;
         }
 
         .hero h1 {
-          font-size: 2em;
+          font-size: 1.6em;
+          margin-bottom: 8px;
+        }
+
+        .hero p {
+          font-size: 0.9em;
           margin-bottom: 10px;
         }
 
         .container {
-          padding: 30px 20px;
+          padding: 20px 15px;
+        }
+
+        .section-title {
+          font-size: 1.4em;
+          margin-bottom: 15px;
+        }
+
+        .stats-section {
+          padding: 15px;
+          gap: 10px;
+        }
+      }
+
+      /* Orientation Query - Landscape Mode (Medium Height) */
+      @media (orientation: landscape) and (min-height: 501px) and (max-height: 800px) {
+        .hero {
+          padding: 35px 20px 20px;
+        }
+
+        .hero h1 {
+          font-size: 1.8em;
+          margin-bottom: 10px;
+        }
+
+        .container {
+          padding: 25px 20px;
         }
 
         .section-title {
           font-size: 1.6em;
-          margin-bottom: 25px;
+          margin-bottom: 20px;
         }
       }
 
@@ -865,6 +1108,10 @@
 
         nav a:hover {
           transform: translateY(-1px);
+        }
+
+        .stat-box:hover {
+          transform: translateY(-3px) scale(1.04);
         }
       }
 
