@@ -593,6 +593,10 @@
 
         table {
           font-size: 0.65em;
+          display: block;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          white-space: nowrap;
         }
 
         th {
@@ -602,6 +606,7 @@
 
         td {
           padding: 8px 5px;
+          white-space: nowrap;
         }
 
         .photos-grid {
@@ -696,6 +701,10 @@
         table {
           font-size: 0.7em;
           border-radius: 8px;
+          display: block;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          white-space: nowrap;
         }
 
         th {
@@ -705,6 +714,7 @@
 
         td {
           padding: 9px 6px;
+          white-space: nowrap;
         }
 
         .photos-grid {
@@ -797,7 +807,9 @@
           font-size: 0.78em;
           display: block;
           overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
           border-radius: 10px;
+          white-space: nowrap;
         }
 
         th {
@@ -807,6 +819,7 @@
 
         td {
           padding: 11px;
+          white-space: nowrap;
         }
 
         .photos-grid {
@@ -872,6 +885,7 @@
           font-size: 0.83em;
           display: block;
           overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
           white-space: nowrap;
         }
 
@@ -881,6 +895,7 @@
 
         td {
           padding: 13px;
+          white-space: nowrap;
         }
 
         .photos-grid {
@@ -1198,6 +1213,7 @@
       <!-- Members Table Section -->
       <div class="members-section">
         <h2 class="section-title">📋 Our Team Members</h2>
+        <div class="table-wrapper">
         <table>
           <thead>
             <tr>
@@ -1508,6 +1524,7 @@
             </tr>
           </tbody>
         </table>
+        </div>
       </div>
 
       <!-- Photo Grid Section -->
