@@ -17,6 +17,8 @@
             font-family: 'Arial', sans-serif;
             min-height: 100vh;
             padding: 20px;
+            overflow-x: hidden;
+            width: 100%;
         }
         
         nav {
@@ -33,6 +35,8 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 20px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
         
         nav a {
@@ -42,6 +46,8 @@
             border-radius: 5px;
             transition: all 0.3s ease;
             font-weight: bold;
+            white-space: nowrap;
+            display: inline-block;
         }
         
         nav a:hover {
@@ -57,6 +63,8 @@
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            width: 100%;
+            overflow: hidden;
         }
         
         h1 {
@@ -64,6 +72,9 @@
             margin-bottom: 40px;
             color: #00f2fe;
             font-size: 2.5em;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            word-break: break-word;
         }
         
         .contact-grid {
@@ -71,6 +82,8 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
             margin-top: 30px;
+            width: 100%;
+            overflow: hidden;
         }
         
         .contact-card {
@@ -108,6 +121,8 @@
         .contact-info p {
             margin: 5px 0;
             word-break: break-word;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
         
         .icon {
@@ -118,13 +133,153 @@
         /* RESPONSIVE DESIGN - MEDIA QUERIES */
         /* ============================================ */
 
-        @media (max-width: 480px) {
+        /* Ultra Small Devices - Very Small Phones (< 320px) */
+        @media (max-width: 320px) {
+            body {
+                padding: 5px;
+            }
+
+            nav {
+                margin-bottom: 12px;
+                padding: 8px 0;
+                border-radius: 8px;
+            }
+
+            nav ul {
+                gap: 5px;
+                padding: 0 8px;
+            }
+
+            nav a {
+                padding: 6px 8px;
+                font-size: 0.7em;
+                border-radius: 4px;
+            }
+
+            .container {
+                padding: 12px;
+                border-radius: 10px;
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 1.3em;
+                margin-bottom: 20px;
+                word-break: break-word;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                margin-top: 15px;
+            }
+
+            .contact-card {
+                padding: 12px;
+                border-radius: 8px;
+            }
+
+            .contact-card h2 {
+                font-size: 1.1em;
+                margin-bottom: 8px;
+            }
+
+            .contact-info {
+                margin-bottom: 8px;
+                font-size: 0.75em;
+                line-height: 1.3;
+            }
+
+            .contact-info strong {
+                margin-bottom: 3px;
+            }
+
+            .contact-info p {
+                margin: 3px 0;
+            }
+        }
+
+        /* Extra Small Devices - Mobile (320px - 480px) */
+        @media (min-width: 320px) and (max-width: 480px) {
+            body {
+                padding: 8px;
+                overflow-x: hidden;
+            }
+
+            nav {
+                margin-bottom: 15px;
+                padding: 10px 0;
+                border-radius: 8px;
+            }
+
+            nav ul {
+                gap: 8px;
+                padding: 0 10px;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                padding: 8px 12px;
+                font-size: 0.75em;
+                border-radius: 4px;
+                white-space: nowrap;
+            }
+
+            .container {
+                padding: 15px;
+                border-radius: 10px;
+                max-width: 100%;
+                box-shadow: 0 4px 16px rgba(31, 38, 135, 0.25);
+            }
+
+            h1 {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+                word-break: break-word;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                margin-top: 15px;
+            }
+
+            .contact-card {
+                padding: 15px;
+                border-radius: 8px;
+            }
+
+            .contact-card h2 {
+                font-size: 1.2em;
+                margin-bottom: 10px;
+                padding-bottom: 8px;
+            }
+
+            .contact-info {
+                margin-bottom: 10px;
+                font-size: 0.8em;
+                line-height: 1.4;
+            }
+
+            .contact-info strong {
+                margin-bottom: 4px;
+            }
+
+            .contact-info p {
+                margin: 4px 0;
+                word-break: break-word;
+            }
+        }
+
+        /* Small Devices - Small Tablets (481px - 640px) */
+        @media (min-width: 481px) and (max-width: 640px) {
             body {
                 padding: 10px;
             }
 
             nav {
-                margin-bottom: 15px;
+                margin-bottom: 18px;
+                padding: 10px 0;
             }
 
             nav ul {
@@ -132,52 +287,20 @@
             }
 
             nav a {
-                padding: 8px 12px;
+                padding: 9px 14px;
                 font-size: 0.8em;
+                border-radius: 5px;
             }
 
             .container {
                 padding: 20px;
                 max-width: 100%;
-            }
-
-            h1 {
-                font-size: 1.5em;
-                margin-bottom: 25px;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-                margin-top: 20px;
-            }
-
-            .contact-card {
-                padding: 15px;
-            }
-
-            .contact-card h2 {
-                font-size: 1.1em;
-                margin-bottom: 10px;
-            }
-
-            .contact-info {
-                margin-bottom: 8px;
-                font-size: 0.85em;
-            }
-        }
-
-        @media (max-width: 640px) {
-            nav ul {
-                gap: 12px;
-            }
-
-            .container {
-                padding: 25px;
+                border-radius: 12px;
             }
 
             h1 {
                 font-size: 1.8em;
+                margin-bottom: 24px;
             }
 
             .contact-grid {
@@ -187,31 +310,55 @@
 
             .contact-card {
                 padding: 18px;
+                border-radius: 8px;
             }
 
             .contact-card h2 {
-                font-size: 1.2em;
+                font-size: 1.3em;
+                margin-bottom: 12px;
+            }
+
+            .contact-info {
+                margin-bottom: 10px;
+                font-size: 0.85em;
             }
         }
 
-        @media (max-width: 768px) {
+        /* Medium Devices - Tablets (641px - 768px) */
+        @media (min-width: 641px) and (max-width: 768px) {
             body {
-                padding: 15px;
+                padding: 12px;
+            }
+
+            nav {
+                margin-bottom: 22px;
+                padding: 12px 0;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            nav a {
+                padding: 10px 16px;
+                font-size: 0.88em;
             }
 
             .container {
-                padding: 30px;
+                padding: 28px;
                 max-width: 95%;
+                border-radius: 12px;
             }
 
             h1 {
                 font-size: 2em;
-                margin-bottom: 30px;
+                margin-bottom: 28px;
+                color: #00f2fe;
             }
 
             .contact-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 20px;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 18px;
             }
 
             .contact-card {
@@ -219,30 +366,259 @@
             }
 
             .contact-card h2 {
-                font-size: 1.3em;
+                font-size: 1.4em;
+                margin-bottom: 12px;
+            }
+
+            .contact-info {
+                margin-bottom: 11px;
+                font-size: 0.9em;
             }
         }
 
-        @media (max-width: 1024px) {
+        /* Medium-Large Devices - Small Tablets (769px - 900px) */
+        @media (min-width: 769px) and (max-width: 900px) {
+            body {
+                padding: 15px;
+            }
+
+            nav {
+                margin-bottom: 25px;
+                padding: 13px 0;
+            }
+
+            nav ul {
+                gap: 18px;
+            }
+
+            nav a {
+                padding: 10px 18px;
+                font-size: 0.9em;
+            }
+
             .container {
+                padding: 32px;
                 max-width: 95%;
+            }
+
+            h1 {
+                font-size: 2.2em;
+                margin-bottom: 32px;
             }
 
             .contact-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .contact-card {
+                padding: 22px;
+            }
+
+            .contact-card h2 {
+                font-size: 1.45em;
+            }
+
+            .contact-info {
+                margin-bottom: 12px;
+                font-size: 0.93em;
             }
         }
 
+        /* Large Tablets (901px - 1024px) */
+        @media (min-width: 901px) and (max-width: 1024px) {
+            body {
+                padding: 18px;
+            }
+
+            nav {
+                margin-bottom: 28px;
+                padding: 14px 0;
+            }
+
+            nav ul {
+                gap: 20px;
+            }
+
+            nav a {
+                padding: 11px 20px;
+                font-size: 0.93em;
+            }
+
+            .container {
+                padding: 36px;
+                max-width: 98%;
+            }
+
+            h1 {
+                font-size: 2.3em;
+                margin-bottom: 34px;
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 22px;
+            }
+
+            .contact-card {
+                padding: 24px;
+            }
+
+            .contact-card h2 {
+                font-size: 1.5em;
+            }
+        }
+
+        /* Desktop Screens (1025px - 1440px) */
+        @media (min-width: 1025px) and (max-width: 1440px) {
+            body {
+                padding: 20px;
+            }
+
+            nav {
+                margin-bottom: 30px;
+            }
+
+            nav ul {
+                gap: 22px;
+            }
+
+            .container {
+                max-width: 1000px;
+                padding: 40px;
+            }
+
+            h1 {
+                font-size: 2.4em;
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 25px;
+            }
+        }
+
+        /* Large Desktop (> 1441px) */
+        @media (min-width: 1441px) {
+            body {
+                padding: 25px;
+            }
+
+            .container {
+                max-width: 1100px;
+                padding: 45px;
+            }
+
+            h1 {
+                font-size: 2.6em;
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+
+            .contact-card {
+                padding: 30px;
+            }
+
+            .contact-card h2 {
+                font-size: 1.7em;
+            }
+        }
+
+        /* Landscape Mode - Small Height */
+        @media (orientation: landscape) and (max-height: 500px) {
+            body {
+                padding: 8px;
+            }
+
+            nav {
+                margin-bottom: 10px;
+                padding: 8px 0;
+            }
+
+            nav ul {
+                gap: 8px;
+            }
+
+            nav a {
+                padding: 6px 10px;
+                font-size: 0.75em;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.4em;
+                margin-bottom: 10px;
+            }
+
+            .contact-grid {
+                gap: 10px;
+                margin-top: 10px;
+            }
+
+            .contact-card {
+                padding: 12px;
+            }
+
+            .contact-card h2 {
+                font-size: 1.15em;
+                margin-bottom: 8px;
+            }
+
+            .contact-info {
+                margin-bottom: 6px;
+                font-size: 0.8em;
+            }
+        }
+
+        /* Landscape Mode - Medium Height */
+        @media (orientation: landscape) and (min-height: 501px) {
+            body {
+                padding: 12px;
+            }
+
+            nav {
+                margin-bottom: 15px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                margin-bottom: 18px;
+            }
+        }
+
+        /* Touch Devices */
         @media (hover: none) and (pointer: coarse) {
             .contact-card:hover {
                 transform: translateY(-3px);
             }
+
+            nav a:hover {
+                transform: scale(1.02);
+            }
         }
 
+        /* Accessibility - Reduced Motion */
         @media (prefers-reduced-motion: reduce) {
             * {
                 animation-duration: 0.01ms !important;
                 transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* High DPI Screens */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            body {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
             }
         }
     </style>
