@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - ESC Project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ============ ANIMATIONS ============ */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
+            }
+            50% {
+                box-shadow: 0 8px 35px rgba(245, 87, 108, 0.7), 0 0 30px rgba(240, 147, 251, 0.5);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                color: #f5576c;
+                text-shadow: 0 0 10px rgba(245, 87, 108, 0.3);
+            }
+            50% {
+                color: #f093fb;
+                text-shadow: 0 0 25px rgba(240, 147, 251, 0.8), 0 0 40px rgba(245, 87, 108, 0.5);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes shimmerBg {
+            0% {
+                background-position: -1000px 0;
+            }
+            100% {
+                background-position: 1000px 0;
+            }
+        }
+
+        @keyframes cardFlip {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(5deg);
+            }
+        }
+
+        @keyframes borderGlow {
+            0%, 100% {
+                border-color: rgba(255, 255, 255, 0.3);
+            }
+            50% {
+                border-color: rgba(240, 147, 251, 0.8);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes wobble {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-5px);
+            }
+            75% {
+                transform: translateX(5px);
+            }
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: #333;
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            padding: 20px;
+            animation: fadeInDown 0.8s ease;
+        }
+        
+        nav {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px 0;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            animation: slideInUp 0.6s ease;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            animation: fadeInDown 0.6s ease;
+        }
+
+        nav li:nth-child(1) a { animation-delay: 0s; }
+        nav li:nth-child(2) a { animation-delay: 0.1s; }
+        nav li:nth-child(3) a { animation-delay: 0.2s; }
+        nav li:nth-child(4) a { animation-delay: 0.3s; }
+        nav li:nth-child(5) a { animation-delay: 0.4s; }
+        
+        nav a:hover {
+            background-color: #f5576c;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(245, 87, 108, 0.6);
+            animation: pulse 0.6s ease;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            animation: scaleIn 0.8s ease;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #f5576c;
+            font-size: 2.5em;
+            animation: glow 3s ease-in-out infinite, slideInUp 0.8s ease;
+        }
+        
+        .bio-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideInLeft 0.6s ease;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .bio-card:nth-child(1) { animation-delay: 0.1s; }
+        .bio-card:nth-child(2) { animation-delay: 0.2s; }
+        .bio-card:nth-child(3) { animation-delay: 0.3s; }
+        .bio-card:nth-child(4) { animation-delay: 0.4s; }
+        .bio-card:nth-child(5) { animation-delay: 0.5s; }
+        .bio-card:nth-child(6) { animation-delay: 0.6s; }
+        .bio-card:nth-child(7) { animation-delay: 0.7s; }
+        .bio-card:nth-child(8) { animation-delay: 0.8s; }
+        
+        .bio-card:hover {
+            transform: translateY(-10px) rotateX(2deg);
+            box-shadow: 0 12px 35px rgba(245, 87, 108, 0.6), 0 0 30px rgba(240, 147, 251, 0.4);
+            animation: pulse 0.6s ease, cardFlip 0.6s ease;
+            border-color: rgba(240, 147, 251, 0.8);
+        }
+        
+        .bio-card h2 {
+            margin-bottom: 10px;
+            font-size: 1.8em;
+            transition: all 0.3s ease;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .bio-card:hover h2 {
+            animation: wobble 0.5s ease;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
+        
+        .matric-dept {
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+            animation: fadeInDown 0.6s ease 0.2s both;
+        }
+
+        .bio-card:hover .matric-dept {
+            opacity: 1;
+            animation: float 1s ease-in-out infinite;
+        }
+        
+        .bio-card p {
+            line-height: 1.6;
+            font-size: 1em;
+            animation: fadeInDown 0.6s ease 0.3s both;
+            transition: all 0.3s ease;
+        }
+
+        .bio-card:hover p {
+            animation: fadeInDown 0.4s ease;
+        }
+
+        /* ============================================ */
+        /* RESPONSIVE DESIGN - MEDIA QUERIES */
+        /* ============================================ */
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            nav {
+                margin-bottom: 15px;
+                padding: 10px 0;
+            }
+
+            nav ul {
+                gap: 10px;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                padding: 8px 12px;
+                font-size: 0.8em;
+            }
+
+            .container {
+                padding: 20px;
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 1.5em;
+                margin-bottom: 25px;
+            }
+
+            .bio-card {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+
+            .bio-card h2 {
+                font-size: 1.3em;
+                margin-bottom: 8px;
+            }
+
+            .matric-dept {
+                font-size: 0.8em;
+            }
+
+            .bio-card p {
+                font-size: 0.9em;
+                line-height: 1.4;
+            }
+        }
+
+        @media (max-width: 640px) {
+            nav ul {
+                gap: 12px;
+            }
+
+            .container {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .bio-card {
+                padding: 18px;
+            }
+
+            .bio-card h2 {
+                font-size: 1.4em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 2em;
+                margin-bottom: 30px;
+            }
+
+            .bio-card {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .bio-card h2 {
+                font-size: 1.5em;
+            }
+
+            .bio-card p {
+                font-size: 0.95em;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                max-width: 95%;
+            }
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            .bio-card:hover {
+                transform: translateY(-3px);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="esc.html">ESC</a></li>
+            <li><a href="advertisement.html">Advertisement</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <h1>Meet Our Team</h1>
+        
+        <div class="bio-card">
+            <h2>Member Name 1</h2>
+            <div class="matric-dept">
+                <strong>Matric No:</strong> MAT/001 | <strong>Department:</strong> Computer Science
+            </div>
+            <p>
+                I’m a tech-driven problem solver who understands systems and makes things work better.
+I’m business-minded, always turning skills into income and building something bigger.
+I’m focused, growth-oriented, and constantly improving how I present and deliver value.
+            </p>
+        </div>
+        
+        <div class="bio-card">
+            <h2>Member Name 2</h2>
+            <div class="matric-dept">
+                <strong>Matric No:</strong> MAT/002 | <strong>Department:</strong> Information Technology
+            </div>
+            <p>
+                i love listening to music and reading novels,i dislike going out i just love my comfort zone
+            </p>
+            </p>
+        </div>
+        
+        <div class="bio-card">
+            <h2>Member Name 3</h2>
+            <div class="matric-dept">
+                <strong>Matric No:</strong> MAT/003 | <strong>Department:</strong> Software Engineering
+            </div>
+            <p>
+                I enjoy reading, watching movies, and listening to music. I love meeting new people, but I don’t like noise or distractions when I’m working.
+        </div>
+        
+        <div class="bio-card">
+            <h2>Member Name 4</h2>
+            <div class="matric-dept">
+                <strong>Matric No:</strong> MAT/004 | <strong>Department:</strong> Cybersecurity
+            </div>
+            <p>
+               i love playing football, I hate negativity or fake people
+            </p>
+        </div>
+        
+        <div class="bio-card">
+            <h2>Member Name 5</h2>
+            <div class="matric-dept">
+                <strong>Matric No:</strong> MAT/005 | <strong>Department:</strong> Data Science
+            </div>
+            <p>
+              A cool and loving guy that love listening to music,watch movie and love browsing  I hate lying 
+
+            </p>
+        </div>
+
+            <div class="bio-card">
+            <h2>Member Name 6</h2>
+            <div class="matric-dept">
+                <strong>Matric No:</strong> MAT/005 | <strong>Department:</strong> Data Science
+            </div>
+            <p>
+              A cool and loving guy that love listening to music,watch movie and love browsing  
+            </p>
+        </div>
+
+        
+            <div class="bio-card">
+            <h2>Member Name 7</h2>
+            <div class="matric-dept">
+                <strong>Matric No:</strong> MAT/005 | <strong>Department:</strong> Data Science
+            </div>
+            <p>
+             A cool guy that love listening to music and playing games 
+            </p>
+        </div>
+
+         <div class="bio-card">
+            <h2>Member Name 8</h2>
+            <div class="matric-dept">
+                <strong>Matric No:</strong> MAT/005 | <strong>Department:</strong> Data Science
+            </div>
+            <p>
+A decent guy with some touches of fra (Akoi Fra),have a fear of Allah            </p>
+        </div>
+
+
+        
+    </div>
+</body>
+</html>

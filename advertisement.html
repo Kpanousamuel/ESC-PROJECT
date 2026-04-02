@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advertisements - ESC Project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #333;
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        nav {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px 0;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        nav a:hover {
+            background-color: #fed6e3;
+            color: #333;
+            transform: scale(1.05);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #ff6b6b;
+            font-size: 2.5em;
+        }
+        
+        .logos-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .logo-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-box:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo-placeholder {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 15px;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+        }
+
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
+            padding: 10px;
+        }
+        
+        .logo-box h3 {
+            color: #333;
+            margin-top: 10px;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #ff6b6b, transparent);
+            margin: 40px 0;
+        }
+        
+        .adverts-section h2 {
+            text-align: center;
+            color: #ff6b6b;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        
+        .advert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .advert-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .advert-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .advert-banner {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: rgba(255, 255, 255, 0.3);
+            font-weight: bold;
+        }
+        
+        .advert-content {
+            padding: 20px;
+        }
+        
+        .advert-content h3 {
+            color: #ff6b6b;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .advert-content p {
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        
+        .advert-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+        
+        .advert-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* ============================================ */
+        /* RESPONSIVE DESIGN - MEDIA QUERIES */
+        /* ============================================ */
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            nav {
+                margin-bottom: 15px;
+            }
+
+            nav ul {
+                gap: 10px;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                padding: 8px 12px;
+                font-size: 0.8em;
+            }
+
+            .container {
+                padding: 20px;
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 1.5em;
+                margin-bottom: 25px;
+            }
+
+            .logos-section {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 20px;
+                margin-bottom: 30px;
+            }
+
+            .logo-placeholder {
+                width: 100px;
+                height: 100px;
+                font-size: 2.5em;
+            }
+
+            .divider {
+                margin: 25px 0;
+            }
+
+            .adverts-section h2 {
+                font-size: 1.3em;
+                margin-bottom: 20px;
+            }
+
+            .advert-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .advert-card {
+                border-radius: 8px;
+            }
+
+            .advert-banner {
+                height: 120px;
+                font-size: 1.5em;
+            }
+
+            .advert-content {
+                padding: 12px;
+            }
+
+            .advert-content h3 {
+                font-size: 1em;
+            }
+
+            .advert-content p {
+                font-size: 0.8em;
+            }
+
+            .advert-btn {
+                padding: 8px 16px;
+                font-size: 0.85em;
+            }
+        }
+
+        @media (max-width: 640px) {
+            nav ul {
+                gap: 12px;
+            }
+
+            .container {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .logos-section {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                padding: 25px;
+            }
+
+            .advert-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .advert-banner {
+                height: 140px;
+                font-size: 1.8em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                padding: 30px;
+                max-width: 95%;
+            }
+
+            h1 {
+                font-size: 2em;
+                margin-bottom: 30px;
+            }
+
+            .logos-section {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                padding: 30px;
+            }
+
+            .logo-box {
+                padding: 15px;
+            }
+
+            .advert-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 18px;
+            }
+
+            .advert-banner {
+                height: 160px;
+            }
+
+            .advert-content {
+                padding: 15px;
+            }
+
+            .advert-content h3 {
+                font-size: 1.1em;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                max-width: 95%;
+            }
+
+            .logos-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .advert-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .advert-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            .logo-box:hover,
+            .advert-card:hover {
+                transform: scale(1.02);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="esc.html">ESC</a></li>
+            <li><a href="advertisement.html">Advertisement</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <h1>Our Institutional Partners</h1>
+        
+        <div class="logos-section">
+            <div class="logo-box">
+                <div class="logo-placeholder">
+                    <img src="Images/Eksu Logo.jpg" alt="EKSU Logo" class="logo-img">
+                </div>
+                <h3>EKSU</h3>
+                <p>Ekiti State University</p>
+            </div>
+            <div class="logo-box">
+                <div class="logo-placeholder">
+                    <img src="Images/ese-logo.png" alt="ESE Logo" class="logo-img">
+                </div>
+                <h3>ESE</h3>
+                <p>Engineering Students</p>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="adverts-section">
+            <h2>Featured Advertisements & Promotions</h2>
+            
+            <div class="advert-grid">
+                <div class="advert-card">
+                    <div class="advert-banner">💻</div>
+                    <div class="advert-content">
+                        <h3>Tech Workshop 2026</h3>
+                        <p>Join our comprehensive tech workshop featuring the latest in software development and web technologies.</p>
+                        <a href="#" class="advert-btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="advert-card">
+                    <div class="advert-banner">🚀</div>
+                    <div class="advert-content">
+                        <h3>Innovation Challenge</h3>
+                        <p>Showcase your ideas and compete for exciting prizes. Open to all engineering students.</p>
+                        <a href="#" class="advert-btn">Register Now</a>
+                    </div>
+                </div>
+                
+                <div class="advert-card">
+                    <div class="advert-banner">📚</div>
+                    <div class="advert-content">
+                        <h3>Online Courses</h3>
+                        <p>Access premium engineering courses online. Lifetime access with certificate upon completion.</p>
+                        <a href="#" class="advert-btn">Enroll Today</a>
+                    </div>
+                </div>
+                
+                <div class="advert-card">
+                    <div class="advert-banner">🏆</div>
+                    <div class="advert-content">
+                        <h3>Career Fair 2026</h3>
+                        <p>Connect with top companies and explore exciting career opportunities in engineering.</p>
+                        <a href="#" class="advert-btn">Apply Here</a>
+                    </div>
+                </div>
+                
+                <div class="advert-card">
+                    <div class="advert-banner">🎯</div>
+                    <div class="advert-content">
+                        <h3>Internship Opportunities</h3>
+                        <p>Gain practical experience with leading tech companies. Apply for internship programs today.</p>
+                        <a href="#" class="advert-btn">View Jobs</a>
+                    </div>
+                </div>
+                
+                <div class="advert-card">
+                    <div class="advert-banner">🌟</div>
+                    <div class="advert-content">
+                        <h3>Mentorship Program</h3>
+                        <p>Get mentored by industry experts. One-on-one guidance for your career development.</p>
+                        <a href="#" class="advert-btn">Sign Up</a>
+                    </div>
+                </div>
+                
+                <div class="advert-card">
+                    <div class="advert-banner">📱</div>
+                    <div class="advert-content">
+                        <h3>Mobile App Development</h3>
+                        <p>Learn to build iOS and Android apps. Intensive bootcamp with hands-on projects.</p>
+                        <a href="#" class="advert-btn">Join Now</a>
+                    </div>
+                </div>
+                
+                <div class="advert-card">
+                    <div class="advert-banner">🔐</div>
+                    <div class="advert-content">
+                        <h3>Cybersecurity Certification</h3>
+                        <p>Master cybersecurity skills and get industry-recognized certification. Expert trainers.</p>
+                        <a href="#" class="advert-btn">Start Learning</a>
+                    </div>
+                </div>
+                
+                <div class="advert-card">
+                    <div class="advert-banner">📊</div>
+                    <div class="advert-content">
+                        <h3>Data Science Bootcamp</h3>
+                        <p>Transform your career with data science. Learn from industry professionals and practice with real datasets.</p>
+                        <a href="#" class="advert-btn">Explore More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
