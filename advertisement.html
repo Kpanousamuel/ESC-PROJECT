@@ -511,7 +511,6 @@
 
         /* Modal Styles */
         .modal {
-            display: none;
             position: fixed;
             z-index: 1000;
             left: 0;
@@ -520,17 +519,22 @@
             height: 100%;
             overflow: auto;
             background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .modal-content {
             background-color: #fff;
-            margin: 5% auto;
+            margin: 0;
             padding: 0;
             border-radius: 10px;
             width: 90%;
             max-width: 600px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             animation: modalFadeIn 0.3s ease;
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         @keyframes modalFadeIn {
@@ -618,7 +622,6 @@
         @media (max-width: 768px) {
             .modal-content {
                 width: 95%;
-                margin: 5% auto;
                 max-width: none;
             }
 
@@ -665,7 +668,6 @@
         @media (max-width: 480px) {
             .modal-content {
                 width: 98%;
-                margin: 2% auto;
                 border-radius: 8px;
             }
 
@@ -712,7 +714,7 @@
         @media (max-width: 320px) {
             .modal-content {
                 width: 99%;
-                margin: 1% auto;
+                max-height: 85vh;
             }
 
             .modal-header img {
@@ -736,7 +738,6 @@
         /* Landscape orientation on small screens */
         @media (max-height: 500px) and (orientation: landscape) {
             .modal-content {
-                margin: 2% auto;
                 max-height: 90vh;
                 overflow-y: auto;
             }
@@ -1015,7 +1016,7 @@
             var mapLink = "https://www.google.com/maps/search/?api=1&query=Ekiti+State+University,+Ado-Ekiti,+Nigeria";
             document.getElementById("mapLink").href = mapLink;
 
-            modal.style.display = "block";
+            modal.style.display = "flex";
         }
     </script>
 
