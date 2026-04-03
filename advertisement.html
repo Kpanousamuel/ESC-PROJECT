@@ -385,6 +385,20 @@
             .advert-card:hover {
                 transform: scale(1.02);
             }
+
+            .close:active {
+                transform: scale(1.1);
+                background: #ff6b6b;
+                color: #fff;
+            }
+
+            .advert-card {
+                cursor: pointer;
+            }
+
+            .advert-card:active {
+                transform: scale(0.98);
+            }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -398,24 +412,101 @@
         @media (max-width: 992px) {
             .container { padding: 20px; }
             .logos-section, .advert-grid { gap: 20px; }
+            .advert-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
         }
 
         @media (max-width: 768px) {
-            nav a { padding: 9px 12px; }
-            .logo-placeholder { width: 120px; height: 120px; }
+            body { padding: 10px; }
+            nav { margin-bottom: 20px; }
+            nav ul { gap: 8px; padding: 0 10px; }
+            nav a { padding: 8px 10px; font-size: 0.85em; }
+            .container { padding: 15px; max-width: 100%; }
+            h1 { font-size: 1.8em; margin-bottom: 25px; }
+            .logos-section { grid-template-columns: 1fr; gap: 15px; padding: 15px; }
+            .logo-placeholder { width: 120px; height: 120px; font-size: 3em; }
+            .logo-box { padding: 15px; }
+            .divider { margin: 20px 0; }
+            .adverts-section h2 { font-size: 1.4em; margin-bottom: 15px; }
+            .advert-grid { grid-template-columns: 1fr; gap: 15px; }
             .advert-card { margin-bottom: 10px; }
+            .advert-banner { height: 140px; font-size: 1.8em; }
+            .advert-content { padding: 12px; }
+            .advert-content h3 { font-size: 1em; }
+            .advert-content p { font-size: 0.85em; }
+            .advert-btn { padding: 8px 14px; font-size: 0.85em; }
         }
 
         @media (max-width: 576px) {
-            .container { padding: 15px; }
-            .logo-placeholder { width: 100px; height: 100px; }
-            .adverts-section h2 { font-size: 1.5em; }
+            body { padding: 5px; }
+            nav ul { gap: 5px; }
+            nav a { padding: 6px 8px; font-size: 0.8em; }
+            .container { padding: 10px; }
+            h1 { font-size: 1.5em; margin-bottom: 20px; }
+            .logos-section { padding: 10px; }
+            .logo-placeholder { width: 100px; height: 100px; font-size: 2.5em; }
+            .advert-banner { height: 120px; font-size: 1.5em; }
+            .advert-content { padding: 10px; }
+            .adverts-section h2 { font-size: 1.2em; }
+        }
+
+        @media (max-width: 480px) {
+            nav { padding: 10px 0; }
+            nav ul { justify-content: center; flex-wrap: wrap; gap: 5px; }
+            nav a { padding: 5px 8px; font-size: 0.75em; white-space: nowrap; }
+            h1 { font-size: 1.3em; }
+            .logo-placeholder { width: 80px; height: 80px; font-size: 2em; }
+            .advert-banner { height: 100px; font-size: 1.2em; }
+            .advert-content h3 { font-size: 0.9em; }
+            .advert-content p { font-size: 0.8em; }
         }
 
         @media (max-width: 420px) {
-            h1 { font-size: 1.8em; }
-            .logo-placeholder { width: 90px; height: 90px; }
-            .advert-banner { height: 150px; }
+            body { padding: 5px; }
+            nav ul { gap: 3px; }
+            nav a { padding: 4px 6px; font-size: 0.7em; }
+            .container { padding: 8px; }
+            h1 { font-size: 1.2em; margin-bottom: 15px; }
+            .logos-section { gap: 10px; padding: 8px; }
+            .logo-placeholder { width: 70px; height: 70px; font-size: 1.8em; }
+            .logo-box { padding: 10px; }
+            .divider { margin: 15px 0; }
+            .adverts-section h2 { font-size: 1.1em; margin-bottom: 10px; }
+            .advert-grid { gap: 10px; }
+            .advert-card { border-radius: 6px; }
+            .advert-banner { height: 90px; font-size: 1.1em; }
+            .advert-content { padding: 8px; }
+            .advert-content h3 { font-size: 0.85em; }
+            .advert-content p { font-size: 0.75em; margin-bottom: 8px; }
+            .advert-btn { padding: 6px 10px; font-size: 0.8em; }
+        }
+
+        @media (max-width: 360px) {
+            nav a { font-size: 0.65em; padding: 3px 5px; }
+            h1 { font-size: 1.1em; }
+            .logo-placeholder { width: 60px; height: 60px; font-size: 1.5em; }
+            .advert-banner { height: 80px; font-size: 1em; }
+            .advert-content h3 { font-size: 0.8em; }
+            .advert-content p { font-size: 0.7em; }
+        }
+
+        @media (max-width: 320px) {
+            body { padding: 3px; }
+            nav ul { gap: 2px; }
+            nav a { font-size: 0.6em; padding: 2px 4px; }
+            .container { padding: 5px; }
+            h1 { font-size: 1em; margin-bottom: 10px; }
+            .logos-section { grid-template-columns: 1fr; gap: 8px; padding: 5px; }
+            .logo-placeholder { width: 50px; height: 50px; font-size: 1.2em; }
+            .logo-box { padding: 8px; }
+            .divider { margin: 10px 0; }
+            .adverts-section h2 { font-size: 1em; margin-bottom: 8px; }
+            .advert-grid { gap: 8px; }
+            .advert-card { border-radius: 4px; }
+            .advert-banner { height: 70px; font-size: 0.9em; }
+            .advert-content { padding: 6px; }
+            .advert-content h3 { font-size: 0.75em; }
+            .advert-content p { font-size: 0.65em; margin-bottom: 6px; }
+            .advert-btn { padding: 4px 8px; font-size: 0.75em; }
         }
 
         /* Modal Styles */
@@ -448,18 +539,28 @@
         }
 
         .close {
-            color: #aaa;
+            color: #333;
             float: right;
             font-size: 28px;
             font-weight: bold;
             margin: 10px;
             cursor: pointer;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease;
         }
 
         .close:hover,
         .close:focus {
-            color: #000;
-            text-decoration: none;
+            color: #fff;
+            background: #ff6b6b;
+            transform: scale(1.1);
         }
 
         .modal-header {
@@ -517,7 +618,12 @@
         @media (max-width: 768px) {
             .modal-content {
                 width: 95%;
-                margin: 10% auto;
+                margin: 5% auto;
+                max-width: none;
+            }
+
+            .modal-header {
+                padding: 15px;
             }
 
             .modal-header img {
@@ -525,8 +631,118 @@
                 height: 100px;
             }
 
+            .modal-header h2 {
+                font-size: 1.3em;
+            }
+
+            .modal-body {
+                padding: 15px;
+            }
+
             .modal-map iframe {
-                height: 250px;
+                height: 200px;
+            }
+
+            .close {
+                font-size: 24px;
+                padding: 5px;
+                margin: 5px;
+                background: rgba(0, 0, 0, 0.1);
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                float: none;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                z-index: 1001;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .modal-content {
+                width: 98%;
+                margin: 2% auto;
+                border-radius: 8px;
+            }
+
+            .modal-header {
+                padding: 10px;
+                text-align: center;
+            }
+
+            .modal-header img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .modal-header h2 {
+                font-size: 1.1em;
+            }
+
+            .modal-body {
+                padding: 10px;
+            }
+
+            .modal-body p {
+                font-size: 0.9em;
+                margin-bottom: 10px;
+            }
+
+            .modal-map h3 {
+                font-size: 1em;
+            }
+
+            .modal-map iframe {
+                height: 150px;
+            }
+
+            .close {
+                font-size: 20px;
+                width: 25px;
+                height: 25px;
+                top: 5px;
+                right: 5px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .modal-content {
+                width: 99%;
+                margin: 1% auto;
+            }
+
+            .modal-header img {
+                width: 70px;
+                height: 70px;
+            }
+
+            .modal-header h2 {
+                font-size: 1em;
+            }
+
+            .modal-body {
+                padding: 8px;
+            }
+
+            .modal-map iframe {
+                height: 120px;
+            }
+        }
+
+        /* Landscape orientation on small screens */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .modal-content {
+                margin: 2% auto;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+
+            .modal-map iframe {
+                height: 150px;
             }
         }
     </style>
