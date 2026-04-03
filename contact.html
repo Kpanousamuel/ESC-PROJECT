@@ -132,6 +132,23 @@
         .icon {
             margin-right: 8px;
         }
+        
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            display: block;
+            border: 3px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover .profile-img {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5);
+        }
 
         /* ============================================ */
         /* RESPONSIVE DESIGN - MEDIA QUERIES */
@@ -181,6 +198,12 @@
             .contact-card {
                 padding: 12px;
                 border-radius: 8px;
+            }
+
+            .profile-img {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 15px;
             }
 
             .contact-card h2 {
@@ -251,6 +274,12 @@
             .contact-card {
                 padding: 15px;
                 border-radius: 8px;
+            }
+
+            .profile-img {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 18px;
             }
 
             .contact-card h2 {
@@ -625,6 +654,30 @@
                 -moz-osx-font-smoothing: grayscale;
             }
         }
+
+        /* Extra Responsive Fine-Tuning */
+        @media (max-width: 992px) {
+            .container { padding: 18px; }
+            .contact-card { padding: 18px; }
+            .contact-grid { gap: 18px; }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            .contact-card h2 { font-size: 1.3em; }
+            .profile-img { width: 80px; height: 80px; }
+        }
+
+        @media (max-width: 576px) {
+            .container { padding: 14px; }
+            .contact-card { padding: 12px; }
+            .contact-info p { font-size: 0.85em; }
+        }
+
+        @media (max-width: 420px) {
+            h1 { font-size: 1.6em; }
+            .profile-img { width: 70px; height: 70px; }
+        }
     </style>
 </head>
 <body>
@@ -643,7 +696,8 @@
         
         <div class="contact-grid">
             <div class="contact-card">
-                <h2>Member 1</h2>
+                <img src="Images/USER 1.jpg" alt="KPANOU SAMUEL TOLULOPE" class="profile-img">
+                <h2>KPANOU SAMUEL TOLULOPE</h2>
                 <div class="contact-info">
                     <strong>📧 Email:</strong>
                     <p>kpanousamuel9@gmail.com</p>
@@ -663,7 +717,8 @@
             </div>
             
             <div class="contact-card">
-                <h2>Member 2</h2>
+                <img src="Images/USER 2.jpg" alt="ADEOSUN MARIAM TEMITOPE" class="profile-img">
+                <h2>ADEOSUN MARIAM TEMITOPE</h2>
                 <div class="contact-info">
                     <strong>📧 Email:</strong>
                     <p>temitopemary415@gmail.com</p>
@@ -683,7 +738,8 @@
             </div>
             
             <div class="contact-card">
-                <h2>Member 3</h2>
+                <img src="Images/USER 3.jpg" alt="FLOURISH TEMITOPE IBIDAPO" class="profile-img">
+                <h2>FLOURISH TEMITOPE IBIDAPO</h2>
                 <div class="contact-info">
                     <strong>📧 Email:</strong>
                     <p>temitopeolufemi252@gmail.com</p>
@@ -703,7 +759,8 @@
             </div>
             
             <div class="contact-card">
-                <h2>Member 4</h2>
+                <img src="Images/USER 4.jpg" alt="FASIKU ILEMOBAYO ADESEYE" class="profile-img">
+                <h2>FASIKU ILEMOBAYO ADESEYE</h2>
                 <div class="contact-info">
                     <strong>📧 Email:</strong>
                     <p>ilemobayofasiku1111@gmail.com</p>
@@ -723,7 +780,8 @@
             </div>
             
             <div class="contact-card">
-                <h2>Member 5</h2>
+                <img src="Images/USER 5.jpg" alt="OLADOKUN TIMILEYIN MOSES" class="profile-img">
+                <h2>OLADOKUN TIMILEYIN MOSES</h2>
                 <div class="contact-info">
                     <strong>📧 Email:</strong>
                     <p>timileyinoladokun2@gmail.com</p>
@@ -743,7 +801,8 @@
             </div>
 
             <div class="contact-card">
-                <h2>Member 6</h2>
+                <img src="Images/USER 6.jpg" alt="ALADEGBAMI MATTHEW SHINAYOMI" class="profile-img">
+                <h2>ALADEGBAMI MATTHEW SHINAYOMI</h2>
                 <div class="contact-info">
                     <strong>📧 Email:</strong>
                     <p>aladegbamimatthew59@gmail.com</p>
@@ -763,7 +822,8 @@
             </div>
             
             <div class="contact-card">
-                <h2>Member 7</h2>
+                <img src="Images/USER 7.jpg" alt="ADELEKE AKINOLA OLANIYI" class="profile-img">
+                <h2>ADELEKE AKINOLA OLANIYI</h2>
                 <div class="contact-info">
                     <strong>📧 Email:</strong>
                     <p>akinolaadeleke2@gmail.com</p>
@@ -783,7 +843,8 @@
             </div>
             
             <div class="contact-card">
-                <h2>Member 8</h2>
+                <img src="Images/USER 8.jpg" alt="ABDULKAREEM ABDULMALIK ENIOLA" class="profile-img">
+                <h2>ABDULKAREEM ABDULMALIK ENIOLA</h2>
                 <div class="contact-info">
                     <strong>📧 Email:</strong>
                     <p>babalolai332@gmail.com</p>

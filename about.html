@@ -284,6 +284,25 @@
             animation: fadeInDown 0.4s ease;
         }
 
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            display: block;
+            border: 4px solid #f5576c;
+            box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
+            transition: all 0.3s ease;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        .bio-card:hover .profile-img {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(245, 87, 108, 0.5);
+            animation: rotate 0.6s ease;
+        }
+
         /* ============================================ */
         /* RESPONSIVE DESIGN - MEDIA QUERIES */
         /* ============================================ */
@@ -398,6 +417,12 @@
                 padding: 15px;
                 margin-bottom: 15px;
                 border-radius: 8px;
+            }
+
+            .profile-img {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 18px;
             }
 
             .bio-card h2 {
@@ -710,6 +735,12 @@
                 margin-bottom: 12px;
             }
 
+            .profile-img {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 15px;
+            }
+
             .bio-card h2 {
                 font-size: 1.1em;
                 margin-bottom: 5px;
@@ -770,6 +801,31 @@
                 -moz-osx-font-smoothing: grayscale;
             }
         }
+
+        /* Extra Responsive Fine-Tuning */
+        @media (max-width: 992px) {
+            .container { padding: 20px; }
+            .bio-card { padding: 18px; }
+            nav a { padding: 9px 14px; }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            .bio-card h2 { font-size: 1.4em; }
+            .profile-img { width: 90px; height: 90px; }
+        }
+
+        @media (max-width: 576px) {
+            .bio-card { padding: 13px; }
+            .bio-card p { font-size: 0.88em; }
+            .contact-grid .bio-card { margin-bottom: 10px; }
+        }
+
+        @media (max-width: 420px) {
+            h1 { font-size: 1.7em; }
+            .bio-card h2 { font-size: 1.2em; }
+            .profile-img { width: 70px; height: 70px; }
+        }
     </style>
 </head>
 <body>
@@ -787,9 +843,10 @@
         <h1>Meet Our Team</h1>
         
         <div class="bio-card">
-            <h2>Member Name 1</h2>
+            <img src="Images/USER 1.jpg" alt="KPANOU SAMUEL TOLULOPE" class="profile-img">
+            <h2>KPANOU SAMUEL TOLULOPE</h2>
             <div class="matric-dept">
-                <strong>Matric No:</strong> MAT/001 | <strong>Department:</strong> Computer Science
+                <strong>Matric No:</strong> MAT/231005063 | <strong>Department:</strong> SOCIOLOGY
             </div>
             <p>
                 I’m a tech-driven problem solver who understands systems and makes things work better.
@@ -799,9 +856,10 @@ I’m focused, growth-oriented, and constantly improving how I present and deliv
         </div>
         
         <div class="bio-card">
-            <h2>Member Name 2</h2>
+            <img src="Images/USER 2.jpg" alt="ADEOSUN MARIAM TEMITOPE" class="profile-img">
+            <h2>ADEOSUN MARIAM TEMITOPE</h2>
             <div class="matric-dept">
-                <strong>Matric No:</strong> MAT/002 | <strong>Department:</strong> Information Technology
+                <strong>Matric No:</strong> MAT/230905080 | <strong>Department:</strong> INDUSTRIAL CHEMISTRY
             </div>
             <p>
                 i love listening to music and reading novels,i dislike going out i just love my comfort zone
@@ -810,18 +868,20 @@ I’m focused, growth-oriented, and constantly improving how I present and deliv
         </div>
         
         <div class="bio-card">
-            <h2>Member Name 3</h2>
+            <img src="Images/USER 3.jpg" alt="FLOURISH TEMITOPE IBIDAPO" class="profile-img">
+            <h2>FLOURISH TEMITOPE IBIDAPO</h2>
             <div class="matric-dept">
-                <strong>Matric No:</strong> MAT/003 | <strong>Department:</strong> Software Engineering
+                <strong>Matric No:</strong> MAT/230912003 | <strong>Department:</strong> ZOOLOGY AND ENVIRONMENTAL BIOLOGY
             </div>
             <p>
                 I enjoy reading, watching movies, and listening to music. I love meeting new people, but I don’t like noise or distractions when I’m working.
         </div>
         
         <div class="bio-card">
-            <h2>Member Name 4</h2>
+            <img src="Images/USER 4.jpg" alt="FASIKU ILEMOBAYO ADESEYE" class="profile-img">
+            <h2>FASIKU ILEMOBAYO ADESEYE</h2>
             <div class="matric-dept">
-                <strong>Matric No:</strong> MAT/004 | <strong>Department:</strong> Cybersecurity
+                <strong>Matric No:</strong> MAT/230303065 | <strong>Department:</strong> PHYSIOLOGY
             </div>
             <p>
                i love playing football, I hate negativity or fake people
@@ -829,9 +889,10 @@ I’m focused, growth-oriented, and constantly improving how I present and deliv
         </div>
         
         <div class="bio-card">
-            <h2>Member Name 5</h2>
+            <img src="Images/USER 5.jpg" alt="OLADOKUN TIMILEYIN MOSES" class="profile-img">
+            <h2>OLADOKUN TIMILEYIN MOSES</h2>
             <div class="matric-dept">
-                <strong>Matric No:</strong> MAT/005 | <strong>Department:</strong> Data Science
+                <strong>Matric No:</strong> MAT/230204198 | <strong>Department:</strong> LINGUISTIC
             </div>
             <p>
               A cool and loving guy that love listening to music,watch movie and love browsing  I hate lying 
@@ -840,9 +901,10 @@ I’m focused, growth-oriented, and constantly improving how I present and deliv
         </div>
 
             <div class="bio-card">
-            <h2>Member Name 6</h2>
+            <img src="Images/USER 6.jpg" alt="ALADEGBAMI MATTHEW SHINAYOMI" class="profile-img">
+            <h2>ALADEGBAMI MATTHEW SHINAYOMI</h2>
             <div class="matric-dept">
-                <strong>Matric No:</strong> MAT/005 | <strong>Department:</strong> Data Science
+                <strong>Matric No:</strong> MAT/230204197 | <strong>Department:</strong> LINGUISTIC
             </div>
             <p>
               A cool and loving guy that love listening to music,watch movie and love browsing  
@@ -851,9 +913,10 @@ I’m focused, growth-oriented, and constantly improving how I present and deliv
 
         
             <div class="bio-card">
-            <h2>Member Name 7</h2>
+            <img src="Images/USER 7.jpg" alt="ADELEKE AKINOLA OLANIYI" class="profile-img">
+            <h2>ADELEKE AKINOLA OLANIYI</h2>
             <div class="matric-dept">
-                <strong>Matric No:</strong> MAT/005 | <strong>Department:</strong> Data Science
+                <strong>Matric No:</strong> MAT/230204211 | <strong>Department:</strong> LINGUISTIC
             </div>
             <p>
              A cool guy that love listening to music and playing games 
@@ -861,9 +924,10 @@ I’m focused, growth-oriented, and constantly improving how I present and deliv
         </div>
 
          <div class="bio-card">
-            <h2>Member Name 8</h2>
+            <img src="Images/USER 8.jpg" alt="ABDULKAREEM ABDULMALIK ENIOLA" class="profile-img">
+            <h2>ABDULKAREEM ABDULMALIK ENIOLA</h2>
             <div class="matric-dept">
-                <strong>Matric No:</strong> MAT/005 | <strong>Department:</strong> Data Science
+                <strong>Matric No:</strong> MAT/230903163 | <strong>Department:</strong> COMPUTER SCIENCE
             </div>
             <p>
 A decent guy with some touches of fra (Akoi Fra),have a fear of Allah            </p>

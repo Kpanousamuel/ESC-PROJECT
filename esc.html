@@ -286,6 +286,30 @@
                 transition-duration: 0.01ms !important;
             }
         }
+
+        /* Extra Responsive Fine-Tuning */
+        @media (max-width: 992px) {
+            .container { padding: 22px; }
+            .gallery-grid { gap: 20px; }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            .image-placeholder { height: 190px; font-size: 2.4em; }
+            .profile-img { width: 80px; height: 80px; }
+        }
+
+        @media (max-width: 576px) {
+            nav a { padding: 8px 10px; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .image-placeholder { height: 160px; }
+        }
+
+        @media (max-width: 420px) {
+            .container { padding: 14px; }
+            h1 { font-size: 1.8em; }
+            .image-placeholder { height: 130px; font-size: 2em; }
+        }
     </style>
 </head>
 <body>
