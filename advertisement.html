@@ -417,6 +417,118 @@
             .logo-placeholder { width: 90px; height: 90px; }
             .advert-banner { height: 150px; }
         }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .modal-header {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 10px 10px 0 0;
+        }
+
+        .modal-header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            margin-bottom: 10px;
+        }
+
+        .modal-header h2 {
+            color: #333;
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        .modal-body p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .modal-map h3 {
+            margin-bottom: 10px;
+            color: #ff6b6b;
+        }
+
+        .modal-map iframe {
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .modal-map a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .modal-map a:hover {
+            text-decoration: underline;
+        }
+
+        /* Modal Responsive */
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+            }
+
+            .modal-header img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .modal-map iframe {
+                height: 250px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -452,7 +564,7 @@
         
         <div class="divider"></div>
         
-        <div class="adverts-section">
+        <!-- <div class="adverts-section">
             <h2>Featured Advertisements & Promotions</h2>
             
             <div class="advert-grid">
@@ -537,7 +649,159 @@
                     </div>
                 </div>
             </div>
+        </div> -->
+        
+        <div class="divider"></div>
+        
+        <div class="adverts-section">
+            <h2>Featured Advertisements & Promotions</h2>
+            
+            <div class="advert-grid">
+                <div class="advert-card" onclick="openModal('KPANOU SAMUEL TOLULOPE', 'Images/USER 1.jpg', 'Expertise: Social Research Consultant & Community Development Specialist. Specializing in sociological studies, data analysis, and community outreach programs.', 'Sociology Research Center, EKSU Campus, Ado-Ekiti')">
+                    <div class="advert-banner">👥</div>
+                    <div class="advert-content">
+                        <h3>KPANOU SAMUEL TOLULOPE</h3>
+                        <p><strong>Expertise:</strong> Social Research Consultant & Community Development Specialist</p>
+                        <p><strong>Workplace:</strong> Sociology Research Center, EKSU Campus, Ado-Ekiti</p>
+                        <p>Specializing in sociological studies, data analysis, and community outreach programs.</p>
+                        <a href="#" class="advert-btn">Contact for Services</a>
+                    </div>
+                </div>
+                
+                <div class="advert-card" onclick="openModal('ADEOSUN MARIAM TEMITOPE', 'Images/USER 2.jpg', 'Expertise: Chemical Analysis Expert & Quality Control Specialist. Providing chemical testing, quality assurance, and industrial chemistry consultations.', 'Industrial Chemistry Lab, EKSU Campus, Ado-Ekiti')">
+                    <div class="advert-banner">🧪</div>
+                    <div class="advert-content">
+                        <h3>ADEOSUN MARIAM TEMITOPE</h3>
+                        <p><strong>Expertise:</strong> Chemical Analysis Expert & Quality Control Specialist</p>
+                        <p><strong>Workplace:</strong> Industrial Chemistry Lab, EKSU Campus, Ado-Ekiti</p>
+                        <p>Providing chemical testing, quality assurance, and industrial chemistry consultations.</p>
+                        <a href="#" class="advert-btn">Contact for Services</a>
+                    </div>
+                </div>
+                
+                <div class="advert-card" onclick="openModal('FLOURISH TEMITOPE IBIDAPO', 'Images/USER 3.jpg', 'Expertise: Wildlife Conservation Specialist & Environmental Biologist. Expert in animal care, environmental research, and conservation initiatives.', 'Zoology Department Lab, EKSU Campus, Ado-Ekiti')">
+                    <div class="advert-banner">🐾</div>
+                    <div class="advert-content">
+                        <h3>FLOURISH TEMITOPE IBIDAPO</h3>
+                        <p><strong>Expertise:</strong> Wildlife Conservation Specialist & Environmental Biologist</p>
+                        <p><strong>Workplace:</strong> Zoology Department Lab, EKSU Campus, Ado-Ekiti</p>
+                        <p>Expert in animal care, environmental research, and conservation initiatives.</p>
+                        <a href="#" class="advert-btn">Contact for Services</a>
+                    </div>
+                </div>
+                
+                <div class="advert-card" onclick="openModal('FASIKU ILEMOBAYO ADESEYE', 'Images/USER 4.jpg', 'Expertise: Medical Research Assistant & Health Studies Specialist. Conducting physiological research, health studies, and medical consultations.', 'Physiology Research Lab, EKSU Campus, Ado-Ekiti')">
+                    <div class="advert-banner">🩺</div>
+                    <div class="advert-content">
+                        <h3>FASIKU ILEMOBAYO ADESEYE</h3>
+                        <p><strong>Expertise:</strong> Medical Research Assistant & Health Studies Specialist</p>
+                        <p><strong>Workplace:</strong> Physiology Research Lab, EKSU Campus, Ado-Ekiti</p>
+                        <p>Conducting physiological research, health studies, and medical consultations.</p>
+                        <a href="#" class="advert-btn">Contact for Services</a>
+                    </div>
+                </div>
+                
+                <div class="advert-card" onclick="openModal('OLADOKUN TIMILEYIN MOSES', 'Images/USER 5.jpg', 'Expertise: Language Specialist & Communication Expert. Providing language studies, translation services, and communication solutions.', 'Linguistics Department Office, EKSU Campus, Ado-Ekiti')">
+                    <div class="advert-banner">📝</div>
+                    <div class="advert-content">
+                        <h3>OLADOKUN TIMILEYIN MOSES</h3>
+                        <p><strong>Expertise:</strong> Language Specialist & Communication Expert</p>
+                        <p><strong>Workplace:</strong> Linguistics Department Office, EKSU Campus, Ado-Ekiti</p>
+                        <p>Providing language studies, translation services, and communication solutions.</p>
+                        <a href="#" class="advert-btn">Contact for Services</a>
+                    </div>
+                </div>
+                
+                <div class="advert-card" onclick="openModal('ALADEGBAMI MATTHEW SHINAYOMI', 'Images/USER 6.jpg', 'Expertise: Language Specialist & Translation Services. Expert in linguistic analysis, translation, and multilingual communication.', 'Linguistics Department Office, EKSU Campus, Ado-Ekiti')">
+                    <div class="advert-banner">🗣️</div>
+                    <div class="advert-content">
+                        <h3>ALADEGBAMI MATTHEW SHINAYOMI</h3>
+                        <p><strong>Expertise:</strong> Language Specialist & Translation Services</p>
+                        <p><strong>Workplace:</strong> Linguistics Department Office, EKSU Campus, Ado-Ekiti</p>
+                        <p>Expert in linguistic analysis, translation, and multilingual communication.</p>
+                        <a href="#" class="advert-btn">Contact for Services</a>
+                    </div>
+                </div>
+                
+                <div class="advert-card" onclick="openModal('ADELEKE AKINOLA OLANIYI', 'Images/USER 7.jpg', 'Expertise: Communication Expert & Language Consultant. Specializing in language education, communication strategies, and linguistic research.', 'Linguistics Department Office, EKSU Campus, Ado-Ekiti')">
+                    <div class="advert-banner">🌐</div>
+                    <div class="advert-content">
+                        <h3>ADELEKE AKINOLA OLANIYI</h3>
+                        <p><strong>Expertise:</strong> Communication Expert & Language Consultant</p>
+                        <p><strong>Workplace:</strong> Linguistics Department Office, EKSU Campus, Ado-Ekiti</p>
+                        <p>Specializing in language education, communication strategies, and linguistic research.</p>
+                        <a href="#" class="advert-btn">Contact for Services</a>
+                    </div>
+                </div>
+                
+                <div class="advert-card" onclick="openModal('ABDULKAREEM ABDULMALIK ENIOLA', 'Images/USER 8.jpg', 'Expertise: Software Developer & IT Solutions Provider. Developing software applications, providing IT support, and tech solutions.', 'Computer Science Lab, EKSU Campus, Ado-Ekiti')">
+                    <div class="advert-banner">💻</div>
+                    <div class="advert-content">
+                        <h3>ABDULKAREEM ABDULMALIK ENIOLA</h3>
+                        <p><strong>Expertise:</strong> Software Developer & IT Solutions Provider</p>
+                        <p><strong>Workplace:</strong> Computer Science Lab, EKSU Campus, Ado-Ekiti</p>
+                        <p>Developing software applications, providing IT support, and tech solutions.</p>
+                        <a href="#" class="advert-btn">Contact for Services</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div id="memberModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <img id="modalImage" src="" alt="Member Photo">
+                <h2 id="modalName"></h2>
+            </div>
+            <div class="modal-body">
+                <p id="modalExpertise"></p>
+                <p id="modalAddress"></p>
+                <div class="modal-map">
+                    <h3>Location</h3>
+                    <iframe id="modalMap" src="" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <p><a id="mapLink" href="" target="_blank">View on Google Maps</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        var modal = document.getElementById("memberModal");
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Function to open modal with member data
+        function openModal(name, imageSrc, expertise, address, workplace) {
+            document.getElementById("modalName").textContent = name;
+            document.getElementById("modalImage").src = imageSrc;
+            document.getElementById("modalExpertise").textContent = expertise;
+            document.getElementById("modalAddress").textContent = "Address: " + address;
+
+            // Set map for EKSU Campus
+            var mapEmbed = "https://maps.google.com/maps?q=Ekiti%20State%20University,%20Ado-Ekiti,%20Nigeria&output=embed";
+            document.getElementById("modalMap").src = mapEmbed;
+
+            var mapLink = "https://www.google.com/maps/search/?api=1&query=Ekiti+State+University,+Ado-Ekiti,+Nigeria";
+            document.getElementById("mapLink").href = mapLink;
+
+            modal.style.display = "block";
+        }
+    </script>
+
 </body>
 </html>
